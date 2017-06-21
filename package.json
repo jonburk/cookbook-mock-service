@@ -13,11 +13,12 @@
   "dependencies": {
     "cors": "^2.8.1",
     "express": "^4.15.2",
+    "faker": "^4.1.0",
+    "guid": "0.0.12",
     "lodash": "^4.17.4"
   },
   "engines": {
     "node": ">=4.3.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
