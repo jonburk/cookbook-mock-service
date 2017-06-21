@@ -1,0 +1,23 @@
+{
+  "name": "cookbook-mock-service",
+  "version": "1.0.0",
+  "description": "Mock cookbook services",
+  "main": "index.js",
+  "repository": "https://github.com/jonburk/cookbook-mock-service",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jonathan Burk",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "devDependencies": {
+  }
+}
