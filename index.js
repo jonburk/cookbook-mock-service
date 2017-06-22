@@ -80,7 +80,7 @@ app.get('/api/recipes/:id/thumbnail', function (req, res) {
   res.sendFile('./static/images/food.png', { root: path.dirname(require.main.filename) })
 })
 
-app.get('/api/recipes/:id/image', function (req, res) {
+app.get('/api/recipes/:id/photo', function (req, res) {
   // res.redirect(faker.image.food())
   res.sendFile('./static/images/food.png', { root: path.dirname(require.main.filename) })
 })
