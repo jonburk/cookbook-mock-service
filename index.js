@@ -9,18 +9,6 @@ const path = require('path')
 
 app.use(cors({ exposedHeaders: 'X-Total-Count' }))
 
-app.get('/api/recipes/:id', function (req, res) {
-  const result = mock.recipes.find(function (recipe) {
-    return recipe.id === req.params.id
-  })
-
-  if (result === undefined) {
-    return res.sendStatus(404)
-  } else {
-    return res.send(result)
-  }
-})
-
 app.get('/api/recipes', function (req, res) {
   const offset = parseInt(req.query.offset || 0)
   const limit = req.query.limit
@@ -73,6 +61,18 @@ app.get('/api/recipes/search-terms', function (req, res) {
   }
 
   res.send(result)
+})
+
+app.get('/api/recipes/:id', function (req, res) {
+  const result = mock.recipes.find(function (recipe) {
+    return recipe.id === req.params.id
+  })
+
+  if (result === undefined) {
+    return res.sendStatus(404)
+  } else {
+    return res.send(result)
+  }
 })
 
 app.get('/api/recipes/:id/thumbnail', function (req, res) {
