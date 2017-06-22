@@ -1,10 +1,11 @@
 'use strict'
 
-var app = require('express')()
-var cors = require('cors')
-var serverPort = 8080
-var mock = require('./mock').create()
-var faker = require('faker')
+const app = require('express')()
+const cors = require('cors')
+const serverPort = 8080
+const mock = require('./mock').create()
+const path = require('path')
+// const faker = require('faker')
 
 app.use(cors({ exposedHeaders: 'X-Total-Count' }))
 
@@ -75,11 +76,13 @@ app.get('/api/recipes/search-terms', function (req, res) {
 })
 
 app.get('/api/recipes/:id/thumbnail', function (req, res) {
-  res.redirect(faker.image.food())
+  // res.redirect(faker.image.food())
+  res.sendFile('./static/images/food.png', { root: path.dirname(require.main.filename) })
 })
 
 app.get('/api/recipes/:id/image', function (req, res) {
-  res.redirect(faker.image.food())
+  // res.redirect(faker.image.food())
+  res.sendFile('./static/images/food.png', { root: path.dirname(require.main.filename) })
 })
 
 // Start the server
